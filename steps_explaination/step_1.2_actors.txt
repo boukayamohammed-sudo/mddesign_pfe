@@ -1,0 +1,17 @@
+========================================================================
+STEP 1.2: DEFINING SYSTEM ACTORS (ACTEURS)
+========================================================================
+
+What We Did:
+------------
+1. Identified the two distinct user groups of the application: Visiteur (Visitor) and Administrateur (Administrator).
+2. Defined roles, user flows, and privilege limits for both groups.
+3. Created a clear visual flow mapping for both actors using Mermaid diagram notation.
+4. Saved these classifications inside 'docs/analysis_actors.md' and synced it to your workspace.
+
+Why We Did It (Theory):
+-----------------------
+In software engineering, identifying actors is a fundamental step in Use Case Analysis.
+- It determines authorization boundaries: We specify which actions are public and which actions must be restricted behind a secure login barrier.
+- It guides UI/UX design: Visiteurs need a visual, fast-loading, clean marketing site, while Admins need an efficient, simple, tabular data-management console (Dashboard).
+- It prevents security vulnerabilities: By defining what a Visitor *can* do (only create messages, read portfolios), we enforce strict controller validation rules preventing them from tampering with administrative endpoints.

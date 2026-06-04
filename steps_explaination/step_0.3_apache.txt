@@ -1,0 +1,16 @@
+========================================================================
+STEP 0.3: VERIFYING THE APACHE WEB SERVER
+========================================================================
+
+What We Did:
+------------
+1. Verified that the Apache service ('httpd.exe') was active on your system.
+2. Queried active TCP ports to confirm that Apache is listening on:
+   - Port 80 (standard HTTP port).
+   - Port 443 (standard HTTPS port).
+3. Verified that the web server successfully serves local requests (XAMPP welcome dashboard visible at http://localhost/).
+
+Why We Did It (Theory):
+-----------------------
+Apache acts as a listener. When you type 'http://localhost/' in your browser, the browser sends a request to port 80. Apache intercepts this request, reads the requested files, parses any PHP code, and returns the resulting HTML.
+If Apache was not running or was blocked by a port conflict (e.g. Skype, IIS, or Docker using port 80), you would get a "Connection Refused" error. Verifying the port binding ensures web page requests will reach our code.

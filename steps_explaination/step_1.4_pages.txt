@@ -1,0 +1,17 @@
+========================================================================
+STEP 1.4: PAGE AND NAVIGATION ARCHITECTURE (PAGES)
+========================================================================
+
+What We Did:
+------------
+1. Mapped out the Front Office pages (Home, Services, Realizations, Contact, About) and defined their section contents.
+2. Mapped out the Back Office pages (Login, Dashboard, Services management, Realizations management, Testimonials management, Message board, Settings).
+3. Listed the URL routes and design layouts (Shared headers/footers, dynamic sidebar for dashboard).
+4. Saved these mappings in 'docs/analysis_pages.md' and synced it to your project folder.
+
+Why We Did It (Theory):
+-----------------------
+A Page Map and UI Wireframe outline:
+- Establishes URL Routing structures: We map our physical file layouts (e.g. app/views/home/index.php, app/views/service/detail.php) to friendly virtual URL paths.
+- Optimizes UI/UX consistency: Separating layout blocks (header.php, navbar.php, footer.php, admin_header.php, admin_sidebar.php) allows us to reuse code. If we change a navigation link, we edit it once in navbar.php and it updates on every page.
+- Directs Controller actions: It maps which controllers (e.g. ServiceController, AuthController, DashboardController) need which action views (e.g. index, create, edit, delete).

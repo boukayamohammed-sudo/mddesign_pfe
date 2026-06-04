@@ -1,0 +1,18 @@
+========================================================================
+STEP 0.7: TESTING THE DATABASE CONNECTION
+========================================================================
+
+What We Did:
+------------
+1. Created a database test script at 'public/test_db.php'.
+2. Used 'require_once' to load the configurations we set up in 'config/config.php'.
+3. Built a PDO connection DSN (Data Source Name) string and instantiated the PDO class inside a try-catch block.
+4. Added error handling options to throw exceptions on SQL errors and retrieve data as associative arrays.
+5. Handled any 'PDOException' by outputting a detailed diagnostic error block instead of letting PHP crash silently or expose raw connection trace logs.
+
+Why We Did It (Theory):
+-----------------------
+Before integrating database access into complex MVC controller methods, it is crucial to perform an isolated unit-like test.
+- The Try-Catch Block: We "try" to run code that might fail (establishing the network connection). If it fails, PHP "throws" an exception, which we "catch" to handle gracefully, showing an informative message instead of a generic "500 Internal Server Error" page or exposing database usernames/passwords in error stacks.
+- PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION: Tells PDO to throw database errors as catchable PHP exceptions.
+- PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC: Automatically converts SQL result rows into easy-to-use PHP arrays where keys match column names.

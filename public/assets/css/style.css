@@ -1,0 +1,23 @@
+/* MD Design - Variables de Charte Graphique */
+:root {
+    --primary-color: #FF7A00;       /* Orange */
+    --secondary-color: #E86800;     /* Orange secondaire */
+    --dark-grey: #2C2C2C;           /* Gris foncé */
+    --light-grey: #E5E5E5;          /* Gris clair */
+    --white: #FFFFFF;               /* Blanc */
+    
+    /* Typographie */
+    --font-main: 'Outfit', 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+}

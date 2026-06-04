@@ -1,0 +1,19 @@
+========================================================================
+STEP 0.2: VERIFYING THE XAMPP ENVIRONMENT
+========================================================================
+
+What We Did:
+------------
+1. Verified if the XAMPP stack was installed in the default location ('C:\xampp').
+2. Executed a terminal query to check the version of PHP available on the system:
+   - Found PHP Version: 8.2.12.
+3. Verified that the XAMPP Control Panel applications were correctly launching the server processes.
+
+Why We Did It (Theory):
+-----------------------
+PHP code cannot be run directly by browser engines (unlike HTML, CSS, and JS). It requires a backend server to parse and execute it.
+XAMPP bundles:
+- Apache (Web Server)
+- MySQL/MariaDB (Database Server)
+- PHP (Code Interpreter)
+Verifying PHP version 8.2.12 is critical because modern features like typed properties, union types, and readonly variables (which make our code cleaner and safer) require PHP 8.x.

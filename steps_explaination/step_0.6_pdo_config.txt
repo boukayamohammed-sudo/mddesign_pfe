@@ -1,0 +1,17 @@
+========================================================================
+STEP 0.6: CONFIGURING PDO SETTINGS
+========================================================================
+
+What We Did:
+------------
+1. Populated 'config/config.php' with global configuration constants:
+   - Database credentials (DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME, DB_CHARSET).
+   - Global application settings (APP_URL, APP_NAME).
+   - Error reporting configurations for development (display_errors enabled).
+
+Why We Did It (Theory):
+-----------------------
+Hardcoding connection settings directly in your PHP classes is bad practice. By separating them into 'config/config.php', we achieve:
+- Centralization: Changing database credentials only requires editing this single file.
+- Clean Code: Your classes don't need to know the database password; they simply read the config constants.
+- Debugging: Turning on error reporting during development makes it easy to track down bugs (e.g., syntax errors or connection exceptions).

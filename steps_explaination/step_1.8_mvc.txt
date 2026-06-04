@@ -1,0 +1,21 @@
+========================================================================
+STEP 1.8: MVC ARCHITECTURE OVERVIEW
+========================================================================
+
+What We Did:
+------------
+1. Documented the full MVC (Model-View-Controller) lifecycle: how a browser request flows through index.php -> Router -> Controller -> Model -> View -> HTML response.
+2. Created a complete File-to-Layer mapping table showing which PHP files belong to which MVC layer.
+3. Explained the Front Controller pattern (single entry point via public/index.php + .htaccess URL rewriting).
+4. Listed all controller routes, model-to-table mappings, and view directory structures.
+5. Saved this architecture overview in 'docs/analysis_mvc.md' and synced it to your workspace.
+
+Why We Did It (Theory):
+-----------------------
+The MVC pattern is a fundamental design pattern used in most modern web frameworks (Laravel, Symfony, CodeIgniter, Django, Ruby on Rails). Understanding it is essential for your PFE:
+- Separation of Concerns: Each layer has one job. Models handle data, Views handle display, Controllers handle logic. This makes the code easier to debug and maintain.
+- Front Controller Pattern: By routing ALL requests through a single index.php file, we prevent direct access to internal PHP files. A user cannot type 'yoursite.com/app/models/Admin.php' and see your database code.
+- Reusability: The base Controller class provides a 'view()' method that every controller inherits. The base Model class provides database access that every model inherits. This avoids code duplication.
+- Testability: When logic is separated, you can test Models independently from Views, and Controllers independently from database queries.
+
+This step completes Phase 1 (Analysis & Design). We now have a full blueprint ready for implementation in Phase 2.

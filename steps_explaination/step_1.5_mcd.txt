@@ -1,0 +1,18 @@
+========================================================================
+STEP 1.5: CONCEPTUAL DATA MODEL (MCD)
+========================================================================
+
+What We Did:
+------------
+1. Defined the 9 entities that form the MD Design system: ADMIN, SERVICE, REALISATION, CONTACT, CLIENT, TEMOIGNAGE, PARAMETRE, FAQ, STATISTIQUE.
+2. Mapped the associations and cardinalities. We linked the portfolio (REALISATION) to the service directories (SERVICE) through a 1:N relationship.
+3. Created a graphic layout representation using Mermaid notation.
+4. Saved this configuration inside 'docs/analysis_mcd.md' and synced it to your workspace.
+
+Why We Did It (Theory):
+-----------------------
+The Conceptual Data Model (Modèle Conceptuel de Données - MCD) represents the high-level business layout of data. It answers the question: "What data does the business care about, and how are the concepts linked?"
+- Entities: Represent objects in the business (e.g. Service, Client, Administrator).
+- Attributes: Information describing the entities (e.g. Service Description, Client Phone).
+- Cardinalities: Rules defining how instances interact (e.g. A Service wraps 0 or many realizations; a single realization belongs to 1 service).
+Designing the MCD is critical because it forces us to align on the database structure before writing any SQL code.

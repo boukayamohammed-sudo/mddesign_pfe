@@ -1,0 +1,17 @@
+========================================================================
+STEP 1.6: LOGICAL DATA MODEL (MLD)
+========================================================================
+
+What We Did:
+------------
+1. Translated the conceptual entities and cardinalities from the MCD into SQL-compliant tables.
+2. Determined column types (INT, VARCHAR, TEXT, DATE, DATETIME, TINYINT) and sizes (e.g. VARCHAR(255) for image files, VARCHAR(50) for credentials).
+3. Set primary key (PK) configurations and foreign key (FK) constraints, implementing the cascade rule ON DELETE CASCADE on the 'realisation' table.
+4. Saved this configuration inside 'docs/analysis_mld.md' and synced it to your workspace.
+
+Why We Did It (Theory):
+-----------------------
+While an MCD represents concepts, the Logical Relational Model (Modèle Logique de Données - MLD) defines the technical structures that a relational engine (like MySQL/MariaDB) can interpret.
+- Data types are critical: If a column has too small a length (e.g. storing a hashed password in a VARCHAR(50)), the hash will be truncated and logins will fail. We use VARCHAR(255) for password hashes and image filenames.
+- Foreign Key Integrity: Ensures that relations stay sound. By setting up references and cascades, we prevent "orphaned data" (like having a portfolio project linked to a service category that doesn't exist).
+Designing the MLD gives us the exact blueprints to write our SQL schema script.

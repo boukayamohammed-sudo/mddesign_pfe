@@ -1,0 +1,15 @@
+========================================================================
+STEP 0.5: CREATING THE MD_DESIGN DATABASE
+========================================================================
+
+What We Did:
+------------
+1. Connected to the MySQL server locally using the terminal.
+2. Created a new database named 'md_design' with appropriate character settings:
+   - Command: CREATE DATABASE IF NOT EXISTS `md_design` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+3. Created a 'database/' folder in the project and stored the SQL creation script 'database/md_design.sql' to version-control the database structure.
+
+Why We Did It (Theory):
+-----------------------
+A database acts as the isolated container for all tables related to our application (ADMIN, SERVICE, REALISATION, CONTACT, etc.).
+Using 'utf8mb4' character set is highly recommended over standard 'utf8' in MySQL because it supports full Unicode character sets, including complex symbols and emojis, ensuring no text corruption occurs when storing data in French or Arabic.

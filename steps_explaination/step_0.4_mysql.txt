@@ -1,0 +1,15 @@
+========================================================================
+STEP 0.4: VERIFYING THE MYSQL/MARIADB SERVER
+========================================================================
+
+What We Did:
+------------
+1. Verified that the MySQL service ('mysqld.exe') was active on your system.
+2. Checked network connections to confirm that MySQL is listening on its default port:
+   - Port 3306.
+3. Tested access to the PHPMyAdmin graphic interface at http://localhost/phpmyadmin/ to ensure MySQL is ready to manage databases.
+
+Why We Did It (Theory):
+-----------------------
+MySQL handles storage and retrieval of dynamic content (like services, user messages, and admin logs). The PHP code talks to MySQL over port 3306.
+If port 3306 was occupied by another application or if the service was stopped, any database request in our PHP files would crash with a connection error. This check confirms the database service is fully operational.

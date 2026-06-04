@@ -1,0 +1,17 @@
+========================================================================
+STEP 1.1: NEEDS ANALYSIS (ANALYSE DES BESOINS)
+========================================================================
+
+What We Did:
+------------
+1. Established the business profile of MD Design, publicizing signage and wrap work in Tangier.
+2. Formulated the goals: a client-facing web front end and a secure admin dashboard backend.
+3. Structured functional requirements (Redirections, CRUD, settings storage, contact forms) and non-functional requirements (Security, speed, mobile compatibility).
+4. Authored 'docs/analysis_needs.md' to formalize this study within the project directory.
+
+Why We Did It (Theory):
+-----------------------
+A needs analysis (needs assessment) acts as the bridge between standard business goals and code design. By clearly identifying what the app must do (Functional Requirements) and how well it must do it (Non-Functional Requirements), we:
+- Define the scope (preventing endless additions of features during coding).
+- Inform the database model design (what columns/tables we need).
+- Guarantee that the end product fulfills the company's real-world business needs.

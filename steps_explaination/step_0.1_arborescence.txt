@@ -1,0 +1,28 @@
+========================================================================
+STEP 0.1: VERIFICATION AND IMPROVEMENT OF PROJECT ARBORESCENCE
+========================================================================
+
+What We Did:
+------------
+1. Analyzed the initial empty directory structure.
+2. Created the missing directories required for a clean MVC architecture:
+   - 'app/core/' to store our core MVC classes (Database, Router, Controller, Model, Session).
+   - 'public/assets/css/' to store our main styling files.
+   - 'public/assets/js/' to store our frontend JavaScript files.
+   - 'public/uploads/' to store dynamic image uploads (for services and realizations).
+3. Initialized the baseline styling in 'public/assets/css/style.css' containing our official color palette variables:
+   - Primary Orange: #FF7A00
+   - Secondary Orange: #E86800
+   - Dark Grey: #2C2C2C
+   - Light Grey: #E5E5E5
+   - White: #FFFFFF
+4. Initialized a script log in 'public/assets/js/main.js' to ensure scripts load correctly.
+
+Why We Did It (Theory):
+-----------------------
+In a professional PHP application, we separate the code into:
+- The Controller (handles requests and logic)
+- The Model (handles data and database operations)
+- The View (handles how the webpage looks)
+Static assets (CSS, JS, uploads, images) belong in the 'public/' directory, which is the only directory exposed to the web. The 'app/' directory remains protected.
+Defining CSS variables at the start ensures that our design stays consistent throughout development.

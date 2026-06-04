@@ -1,0 +1,16 @@
+========================================================================
+STEP 1.3: FUNCTIONAL FEATURES SPECIFICATION (FONCTIONNALITES)
+========================================================================
+
+What We Did:
+------------
+1. Listed and detailed all public front-end features (Services list, Portfolio gallery with filtering, WhatsApp redirects, Contact submissions, Testimonials carousel).
+2. Listed and detailed all administrator back-end dashboard features (Secure admin authentication, Services CRUD, Realizations CRUD, Testimonials CRUD, Message board inbox, Corporate parameters panel).
+3. Authored 'docs/analysis_features.md' to keep these specifications organized and searchable.
+
+Why We Did It (Theory):
+-----------------------
+A Features Specification document is the roadmap for developers and designers:
+- It defines the scope of coding: It specifies exactly which controllers need CRUD capabilities and how images will be handled.
+- It prevents incomplete builds: By specifying validations, statuses (like 'lu = 0/1' for messages), and joining relationships (realizations joined with services), we write bug-free queries in Phase 4 and 5.
+- It ensures alignment: The user knows exactly how the product will behave (e.g. how the WhatsApp button templates the text) before we code it.

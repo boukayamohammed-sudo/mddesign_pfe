@@ -1,0 +1,18 @@
+========================================================================
+STEP 1.7: UML CLASS DIAGRAM (CLASSES UML)
+========================================================================
+
+What We Did:
+------------
+1. Defined the framework's core base classes: Database, Router, Controller, Model, Session.
+2. Structured properties, access visibilities (+ for public, # for protected, - for private), and methods for all entity models and controllers.
+3. Designed an object inheritance system: Model models inherit database connection access; Controller controllers inherit view-compiling actions.
+4. Saved this mapping in 'docs/analysis_uml.md' and synced it to your workspace.
+
+Why We Did It (Theory):
+-----------------------
+A UML Class Diagram is the object-oriented design blueprint for coding the backend of your PHP application. It translates databases and features into code objects:
+- Encapsulation (Access Modifiers): We define visibility. For example, the Database connection '$conn' is kept private so that other classes must access the database safely using prepared methods like 'query()'.
+- Inheritance (IS-A relationships): Controllers inherit base controller rendering behaviors, meaning we write the view resolution code once ('Controller.php') and every controller ('HomeController', 'ServiceController') can use '$this->view()'.
+- Dependency (USES relationships): The base 'Model.php' class uses the 'Database' connection helper, so models focus on SQL queries while the database class handles network connections.
+UML diagramming bridges logical tables and physical PHP scripts.
