@@ -1,0 +1,19 @@
+========================================================================
+STEP 4.2: ERROR FIXING & DASHBOARD INITIALIZATION
+========================================================================
+
+What We Did:
+------------
+1. Fixed the secure session warning by changing the invalid 'cookie_use_only_cookies' option to the correct 'use_only_cookies' inside 'app/core/Session.php'.
+2. Solved the 404 Page Not Found error by upgrading the Front Controller routing in 'public/index.php' to strip '/index.php' prefixes from incoming requests.
+3. Updated 'config/config.php' to define the 'APP_URL' constant dynamically (detecting scheme, hostname, and script directory) so the application works seamlessly on any port (like :3000) or directory structure.
+4. Created the missing 'DashboardController.php' controller and its accompanying premium dark-theme glassmorphic view 'app/views/admin/dashboard/index.php' to display statistics (counters for services, realisations, messages, témoignages) and provide quick action shortcuts.
+
+Why We Did It (Theory):
+-----------------------
+- Session Security options: In PHP, passing options to session_start() uses names without the "session." prefix. Thus, "session.use_only_cookies" must be configured as "use_only_cookies", otherwise PHP emits a warning.
+- Front Controller robustness: Users or dev servers may invoke files directly using the main script name (e.g. index.php/admin/services). Stripping the index.php prefix ensures that standard route matches continue to resolve properly.
+- Dynamic Configuration: Hardcoding hostnames or ports in local configuration files restricts usability across team members or different development setups. Dynamic resolution ensures port changes (like port 3000) do not break asset links or redirects.
+- Controller completeness: Creating stubs and dashboards immediately after auth is completed ensures administrators have a safe page to land on without triggering controller-not-found PHP crashes.
+
+This completes the bug resolution step. The admin dashboard and services catalog are now fully functional and error-free!

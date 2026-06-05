@@ -19,24 +19,24 @@ This document tracks our progress through the project phases. Each step will be 
 - [x] 1.5 MCD (Modèle Conceptuel de Données) - *Completed & Confirmed*
 - [x] 1.6 MLD (Modèle Logique de Données) - *Completed & Confirmed*
 - [x] 1.7 UML Classes - *Completed & Confirmed*
-- [ ] 1.8 Architecture MVC - *Current Step*
+- [x] 1.8 Architecture MVC - *Completed & Confirmed*
 
 ## PHASE 2 : MVC (Core Setup)
-- [ ] Database.php
-- [ ] Router.php
-- [ ] Controller.php
-- [ ] Model.php
-- [ ] Configure full MVC routing
+- [x] Database.php - *Completed & Confirmed*
+- [x] Router.php - *Completed & Confirmed*
+- [x] Controller.php - *Completed & Confirmed*
+- [x] Model.php - *Completed & Confirmed*
+- [x] Configure full MVC routing - *Completed & Confirmed*
 
 ## PHASE 3 : AUTHENTIFICATION
-- [ ] Login
-- [ ] Logout
-- [ ] Session
-- [ ] Protection Admin
+- [x] Login - *Completed & Confirmed*
+- [x] Logout - *Completed & Confirmed*
+- [x] Session - *Completed & Confirmed*
+- [x] Protection Admin - *Completed & Confirmed*
 
 ## PHASE 4 : SERVICES (CRUD & Image Upload)
-- [ ] CRUD (Add, Edit, Delete, Show)
-- [ ] Image upload logic
+- [x] **CRUD (Add, Edit, Delete, Show)** - *Completed & Confirmed*
+- [x] Image upload logic - *Completed & Confirmed*
 
 ## PHASE 5 : REALISATIONS (CRUD, Image Upload & Relations)
 - [ ] CRUD
