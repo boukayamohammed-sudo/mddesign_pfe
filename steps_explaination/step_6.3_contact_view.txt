@@ -1,0 +1,40 @@
+========================================================================
+STEP 6.3: PUBLIC CONTACT VIEW (app/views/contact/index.php)
+========================================================================
+
+Objective:
+----------
+Create the public contact view file `app/views/contact/index.php` displaying the visitor submission form and corporate coordinates (fetched dynamically).
+
+Theory (View Templates & Dynamic Contexts):
+-------------------------------------------
+1. Separation of Concerns:
+   Views should only display HTML markup and simple PHP variables (`<?= e($var) ?>`). All business logic and validations remain inside controllers.
+2. Dynamic Configuration Display:
+   To make company coordinates (phone, address, email, maps) fully dynamic (customizable via parameters panel), we retrieve these values from the database and output them dynamically.
+3. User Feedback Blocks:
+   - Validation Alert: Displays checks/warnings when inputs fail validation.
+   - Flash Success Alert: Notifies the visitor when their message is successfully stored.
+
+Code:
+-----
+[Refer to app/views/contact/index.php]
+
+Explanation:
+------------
+1. Contact Form:
+   - Styled to match the modern premium brand design.
+   - Fields marked with a red star `*` are mandatory.
+   - Retains old inputs so the visitor does not have to retype everything after a validation check fails.
+2. Coordinates & Maps:
+   - Integrates dynamic settings (address, phone, email).
+   - Generates a custom WhatsApp chat link for quick quote requests.
+   - Embeds the Google Maps interactive iframe securely.
+
+Tests:
+------
+Verify file syntax:
+```bash
+php -l app/views/contact/index.php
+```
+If it displays "No syntax errors detected", the syntax is correct.

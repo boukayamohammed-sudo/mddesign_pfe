@@ -1,0 +1,45 @@
+========================================================================
+PHASE 5: REALISATIONS (CRUD, IMAGE UPLOAD & RELATIONSHIPS)
+========================================================================
+
+Objective:
+----------
+Implement the complete portfolio and realizations management system. This includes:
+1. Creating `app/models/Realisation.php` with image uploads and foreign key relation query support (joining with `service` table).
+2. Creating `app/controllers/RealisationController.php` with input validation, secure CRUD handlers, and active toggle toggles.
+3. Creating backend administration views (index, create, edit) inside `app/views/admin/realisations/`.
+4. Registering backend routes in `public/index.php`.
+5. Enhancing the sidebar layouts to dynamically highlight active sub-sections.
+
+Theory (Relational Queries & File Uploads):
+--------------------------------------------
+1. LEFT JOIN Database Relationships:
+   Realizations are connected to services through a foreign key (`id_service`). We query `SELECT r.*, s.nom as service_nom FROM realisation r LEFT JOIN service s ON r.id_service = s.id` to retrieve all project details alongside their categories in a single query.
+2. File Upload Validations:
+   Uploading images in PHP utilizes the superglobal `$_FILES`. To make uploads secure:
+   - Check error codes (`UPLOAD_ERR_OK`).
+   - Validate MIME types (`image/jpeg`, `image/png`, `image/webp`) to prevent executing malicious scripts.
+   - Enforce maximum sizes (e.g., 5MB) to avoid server resource exhaustion.
+   - Generate unique filenames (`realisation_` + `uniqid()`) to prevent name collisions.
+   - Automatically delete old physical images on update or deletion (`unlink`).
+
+Code:
+-----
+1. **Model (`app/models/Realisation.php`)**:
+   Enforces database query structure, joins tables, manages image upload paths, directory creation, and image removal.
+2. **Controller (`app/controllers/RealisationController.php`)**:
+   Verifies admin authentication, validates fields (titre is required, id_service is required), handles $_FILES uploading, and triggers redirects.
+3. **Views**:
+   - `admin/realisations/index.php`: Lists entries in a premium data-table with status badges.
+   - `admin/realisations/create.php`: Form to add a project with dropdown select for services.
+   - `admin/realisations/edit.php`: Form to edit a project showing current image preview.
+
+Tests:
+------
+1. Log in to the administrator area at `http://localhost:3000/public/login`.
+2. Select "Réalisations" in the sidebar dashboard navigation.
+3. Add a new realization (ensure you upload a valid JPEG/PNG image and link it to a service).
+4. Verify the new entry is displayed in the data table with its correct category name.
+5. Click on the status badge to toggle between "Actif" and "Inactif".
+6. Edit the entry to upload a new image or update its descriptions.
+7. Click the delete icon to remove the entry, and confirm that the physical image is deleted from `public/assets/uploads/realisations/`.

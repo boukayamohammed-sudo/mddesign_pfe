@@ -922,3 +922,243 @@ body.admin-body {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   FRONT OFFICE - LAYOUT & NAVIGATION
+   ========================================================================== */
+
+/* Container utility */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header & Navbar styling */
+.main-header {
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all var(--transition-normal);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar-logo span {
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--white);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.admin-badge {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.admin-badge:hover {
+    background: var(--primary-glow);
+    color: var(--white);
+}
+
+.navbar-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Devis Express / WhatsApp Button */
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--white) !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebd59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Mobile Toggle Hamburger */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: all var(--transition-normal);
+}
+
+/* ==========================================================================
+   FRONT OFFICE - HERO SECTION & GENERAL
+   ========================================================================== */
+
+.home-hero {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 140px 0 100px;
+    border-bottom: 4px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 122, 0, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Responsive Front-Office Header & Nav */
+@media (max-width: 992px) {
+    .nav-list {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(15px);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        padding: 100px 30px 40px;
+        transition: right var(--transition-normal);
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 18px;
+        width: 100%;
+        display: block;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

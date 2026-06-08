@@ -1,0 +1,39 @@
+========================================================================
+STEP 6.1: CONTACT MODEL (app/models/Contact.php)
+========================================================================
+
+Objective:
+----------
+Create the `Contact` model class that interacts with the `contact` table in the database. This model handles saving contact form submissions, listing messages, marking messages as read, and deleting messages.
+
+Theory (Contact Form & Database Mapping):
+------------------------------------------
+In an MVC application, form inputs submitted by visitors are captured by the Controller, validated, and then passed to the Model to be securely inserted into the database. The `contact` table contains:
+- `id` (INT, Primary Key)
+- `nom_complet` (VARCHAR)
+- `telephone` (VARCHAR, NULL)
+- `email` (VARCHAR)
+- `sujet` (VARCHAR)
+- `message` (TEXT)
+- `date_envoi` (TIMESTAMP, default CURRENT_TIMESTAMP)
+- `lu` (TINYINT, 0 = unread, 1 = read)
+
+Code:
+-----
+[Refer to app/models/Contact.php]
+
+Explanation:
+------------
+1. `create(array $data)`: Inserts a new row with the client's information. It binds placeholders using PDO prepared statements to protect against SQL injections.
+2. `all()`: Retrieves all messages from the inbox, ordering them from newest to oldest.
+3. `markAsRead(int $id)`: Updates the `lu` field of a message to 1, indicating that the administrator has opened and read it.
+4. `delete(int $id)`: Deletes the selected message from the database.
+5. `countUnread()`: Counts how many messages have `lu = 0`, which is useful for displaying notification counts on the admin sidebar and dashboard.
+
+Tests:
+------
+Validate the model class compilation by running a dry-run check in PHP:
+```bash
+php -r "require 'config/config.php'; require 'app/core/Database.php'; require 'app/core/Model.php'; require 'app/models/Contact.php'; var_dump(new Contact());"
+```
+If this prints the `Contact` model object successfully, the syntax and configuration are correct!

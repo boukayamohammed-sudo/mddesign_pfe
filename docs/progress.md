@@ -39,18 +39,18 @@ This document tracks our progress through the project phases. Each step will be 
 - [x] Image upload logic - *Completed & Confirmed*
 
 ## PHASE 5 : REALISATIONS (CRUD, Image Upload & Relations)
-- [ ] CRUD
-- [ ] Image upload
-- [ ] Relation with Service
+- [x] CRUD - *Completed & Confirmed*
+- [x] Image upload - *Completed & Confirmed*
+- [x] Relation with Service - *Completed & Confirmed*
 
 ## PHASE 6 : CONTACT (Form & Database)
-- [ ] Form interface
-- [ ] Input Validation
-- [ ] Database storage
-- [ ] Admin panel review
+- [x] Form interface - *Completed & Confirmed*
+- [x] Input Validation - *Completed & Confirmed*
+- [x] Database storage - *Completed & Confirmed*
+- [x] Admin panel review - *Completed & Confirmed*
 
 ## PHASE 7 : TEMOIGNAGES (CRUD)
-- [ ] CRUD setup
+- [ ] CRUD setup - *Current Step*
 
 ## PHASE 8 : PARAMETRES (Dynamic Corporate Info)
 - [ ] Corporate parameters CRUD (Logo, Phone, WhatsApp, Email, Address, Socials)

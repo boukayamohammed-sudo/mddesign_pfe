@@ -65,15 +65,28 @@ $router->add('/admin/services/edit/{id}', 'ServiceController@edit');
 $router->add('/admin/services/delete/{id}', 'ServiceController@deleteService');
 $router->add('/admin/services/toggle/{id}', 'ServiceController@toggleActive');
 
+// Admin Réalisations Routes
+$router->add('/admin/realisations', 'RealisationController@adminIndex');
+$router->add('/admin/realisations/create', 'RealisationController@create');
+$router->add('/admin/realisations/edit/{id}', 'RealisationController@edit');
+$router->add('/admin/realisations/delete/{id}', 'RealisationController@deleteRealisation');
+$router->add('/admin/realisations/toggle/{id}', 'RealisationController@toggleActive');
+
+// Admin Messages Routes
+$router->add('/admin/messages', 'ContactController@adminIndex');
+$router->add('/admin/messages/read/{id}', 'ContactController@markAsRead');
+$router->add('/admin/messages/delete/{id}', 'ContactController@deleteMessage');
+
 // Admin Paramètres Routes
 $router->add('/admin/parametres', 'ParametreController@index');
 $router->add('/admin/parametres/update', 'ParametreController@update');
 
 // Admin Témoignages Routes
-$router->add('/admin/temoignages', 'TemoignageController@index');
+$router->add('/admin/temoignages', 'TemoignageController@adminIndex');
 $router->add('/admin/temoignages/create', 'TemoignageController@create');
 $router->add('/admin/temoignages/edit/{id}', 'TemoignageController@edit');
 $router->add('/admin/temoignages/delete/{id}', 'TemoignageController@delete');
+$router->add('/admin/temoignages/toggle/{id}', 'TemoignageController@toggleActive');
 
 // 6. Extract Request URI relative to base folder directory
 $requestUri = $_SERVER['REQUEST_URI'] ?? '/';

@@ -1,0 +1,38 @@
+========================================================================
+STEP 6.2: CONTACT CONTROLLER (app/controllers/ContactController.php)
+========================================================================
+
+Objective:
+----------
+Create the `ContactController` class that handles the request lifecycle of contact form pages, handles POST form validations, and administers the backend inbox control functions.
+
+Theory (Controller Handlers and Request Cycles):
+------------------------------------------------
+1. Form Input Validation:
+   Before inserting visitor inputs into the database, the controller must sanitize and validate them. We ensure that:
+   - Fields are not empty.
+   - String lengths do not exceed database definitions (e.g., max 100 for name).
+   - The email is in a valid format (`FILTER_VALIDATE_EMAIL`).
+   - If error(s) occur, the controller returns them along with old values to preserve form state.
+2. Security Guards:
+   Admin actions (listing, reading, deleting) are protected using `check_admin()` to verify that only authenticated administrators can access message data.
+
+Code:
+-----
+[Refer to app/controllers/ContactController.php]
+
+Explanation:
+------------
+1. `index()`: Displays the public contact page, fetching company coordinates dynamically using the `settings()` helper.
+2. `submit()`: Processes form submission. On POST, it checks validations. If successful, it stores the message, sets a success flash, and redirects. Otherwise, it re-renders the view with errors and old input values.
+3. `adminIndex()`: Secures the route, retrieves messages, and renders the inbox view.
+4. `markAsRead($id)`: Updates status via the model, sets a success flash, and redirects.
+5. `deleteMessage($id)`: Removes the record via the model and sets a flash.
+
+Tests:
+------
+Verify file syntax:
+```bash
+php -l app/controllers/ContactController.php
+```
+If this returns "No syntax errors detected", the syntax is correct.

@@ -1,0 +1,37 @@
+========================================================================
+STEP 7.1: TESTIMONIAL MODEL (app/models/Temoignage.php)
+========================================================================
+
+Objective:
+----------
+Create the `Temoignage` model class that interacts with the `temoignage` table in the database. This model handles querying active testimonials for the public homepage, retrieving all testimonials for the admin panel, uploading author avatar photos, and managing standard CRUD operations.
+
+Theory (Testimonials Model Design):
+-----------------------------------
+1. Active Filtering:
+   Testimonials are shown in the public section of the website. To filter draft or disabled reviews, we use the `actif` flag, only querying reviews where `actif = 1` for the front office.
+2. Profile Picture Upload & Verification:
+   Author avatars use specific uploader controls:
+   - Max file size: 2MB (standard size for small avatars).
+   - Valid file types: JPEG, PNG, WebP, GIF.
+   - Autodelete helper: Automatically deletes the physical image file from the server uploads folder when the testimonial is deleted or updated with a new photo.
+
+Code:
+-----
+[Refer to app/models/Temoignage.php]
+
+Explanation:
+------------
+1. `allActive()`: Queries all active client testimonials, ordered by date.
+2. `create($data, $file)`: Handles uploading the author's profile picture (generating a unique filename) and inserts the row.
+3. `update($id, $data, $file)`: Updates description or client details. If a new photo is uploaded, it deletes the previous photo file to prevent server storage bloat.
+4. `delete($id)`: Deletes the database row and unlinks the author's photo from the server uploads directory.
+5. `toggleActive($id)`: Utility to quickly enable or disable a testimonial from showing on the website.
+
+Tests:
+------
+Validate the model class compilation by running a dry-run check in PHP:
+```bash
+php -r "require 'config/config.php'; require 'app/core/Database.php'; require 'app/core/Model.php'; require 'app/models/Temoignage.php'; var_dump(new Temoignage());"
+```
+If this prints the `Temoignage` model object successfully, the syntax and configuration are correct!

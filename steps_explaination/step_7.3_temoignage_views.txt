@@ -1,0 +1,37 @@
+========================================================================
+STEP 7.3: ADMIN TESTIMONIAL VIEWS (app/views/admin/temoignages/)
+========================================================================
+
+Objective:
+----------
+Create the backend testimonial management view files inside `app/views/admin/temoignages/`.
+
+Theory (CRUD Form UX design):
+----------------------------
+1. Visual List Elements:
+   Testimonials should display author photos/avatars. If an author doesn't have an avatar, a circular user icon is rendered to keep the table structure uniform.
+2. File Upload previews:
+   Forms leverage JavaScript to display a live preview of the client's uploaded avatar immediately, before submission.
+3. Form State preservation:
+   - On validation errors, the form inputs retain data.
+   - On editing, the form displays the current author avatar alongside the file uploader.
+
+Code:
+-----
+[Refer to views inside app/views/admin/temoignages/]
+
+Explanation:
+------------
+1. `index.php`: Renders lists of testimonials with circular thumbnails, client name, functional title, status badging, and action links.
+2. `create.php`: Form with inputs for client details, description, file uploader for avatars, and status checkboxes. Includes client-side photo previews.
+3. `edit.php`: Form to modify testimonial data, displaying the current avatar photo and optional uploader fields.
+
+Tests:
+------
+Verify file syntax:
+```bash
+php -l app/views/admin/temoignages/index.php
+php -l app/views/admin/temoignages/create.php
+php -l app/views/admin/temoignages/edit.php
+```
+If all files display "No syntax errors detected", they compile correctly.

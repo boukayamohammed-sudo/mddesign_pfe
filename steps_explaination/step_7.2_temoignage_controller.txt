@@ -1,0 +1,37 @@
+========================================================================
+STEP 7.2: TESTIMONIAL CONTROLLER (app/controllers/TemoignageController.php)
+========================================================================
+
+Objective:
+----------
+Create the `TemoignageController` class that handles the request lifecycle of testimonial administration, handles POST form validations, and administers backend CRUD actions.
+
+Theory (Controller Validation Checks & Redirects):
+--------------------------------------------------
+1. Input Validations:
+   - Client name: Mandatory, maximum length of 100 characters.
+   - Client role/company: Optional, maximum length of 100 characters.
+   - Client feedback message: Mandatory, text length checks.
+   - Profile Photo: Optional, validation checks for type and size (max 2MB).
+2. Administration Safeguard:
+   Applying `check_admin()` before executing any controller method ensures session validation check and blocks direct endpoint calls from visitors.
+
+Code:
+-----
+[Refer to app/controllers/TemoignageController.php]
+
+Explanation:
+------------
+1. `adminIndex()`: Secures endpoint, queries testimonials, and renders list view.
+2. `create()`: On POST, it runs checks. If validation succeeds, it uploads files and calls `Model->create()`, sets flash, and redirects. Otherwise, it retains input and renders views.
+3. `edit($id)`: Fetches record. On POST, it updates changes and deletes older pictures if replacements exist.
+4. `delete($id)`: Deletes database rows and unlinks files.
+5. `toggleActive($id)`: Modifies testimonial visibility flag dynamically.
+
+Tests:
+------
+Verify file syntax:
+```bash
+php -l app/controllers/TemoignageController.php
+```
+If this returns "No syntax errors detected", the syntax is correct.

@@ -1,0 +1,48 @@
+========================================================================
+STEP 6.4: ADMIN MESSAGES PANEL (app/views/admin/messages/index.php)
+========================================================================
+
+Objective:
+----------
+Create the admin inbox messages list view `app/views/admin/messages/index.php` and register all routing paths inside `public/index.php`.
+
+Theory (Inbox Review Interfaces & Routes):
+-------------------------------------------
+1. Administrative Security Routing:
+   All back-office routes require the administrator to be authenticated. In `public/index.php`, we define routing rules linking URLs to their target controller actions.
+2. Read Status Toggle UX:
+   To make managing the inbox intuitive, unread messages:
+   - Are highlighted using a subtle background tint and bold font weight.
+   - Display a "Nouveau" badge.
+   - Display a "Marquer comme lu" action button. Once clicked, the status updates to "Lu" and the row highlight is removed.
+3. Interactive CTA Actions:
+   Allowing administrators to click on mailto or tel links in the inbox to directly email or call back visitors increases back-office efficiency.
+
+Code:
+-----
+[Refer to app/views/admin/messages/index.php]
+
+Explanation:
+------------
+1. Routing Registration:
+   Added paths in the front controller index.php:
+   - `/admin/messages` (lists inbox items)
+   - `/admin/messages/read/{id}` (marks message read)
+   - `/admin/messages/delete/{id}` (removes message)
+2. Admin Inbox Interface:
+   - Shows total, new/unread, and read message counters.
+   - Unread rows are styled to stand out.
+   - Actions provide single-click "Read" changes and deletions with safety confirmation alerts.
+
+Tests:
+------
+1. Check file syntax compiles correctly:
+   php -l app/views/admin/messages/index.php
+2. Submit a contact message from the public contact page:
+   http://localhost:3000/public/contact
+3. Log in to the administrator portal:
+   http://localhost:3000/public/login
+4. Click "Messages" in the sidebar navigation drawer.
+5. Verify the new message displays with bold font and a "Nouveau" status badge.
+6. Click the envelope icon or the status badge to mark it as read. Check that the row background goes back to normal.
+7. Click the delete icon to remove the message and confirm the prompt alert.
