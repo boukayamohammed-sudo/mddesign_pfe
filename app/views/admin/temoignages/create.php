@@ -157,4 +157,4 @@ document.getElementById('actif').addEventListener('change', function() {
 });
 </script>
 
-<?php require_once __DIR__ . '/../../layouts/footer.php'; ?>
+<?php require_once __DIR__ . '/../../layouts/admin_footer.php'; ?>

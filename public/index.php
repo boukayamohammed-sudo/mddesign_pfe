@@ -50,6 +50,7 @@ $router->add('/services/detail/{id}', 'ServiceController@detail');
 $router->add('/realisations', 'RealisationController@index');
 $router->add('/contact', 'ContactController@index');
 $router->add('/contact/submit', 'ContactController@submit');
+$router->add('/about', 'HomeController@about');
 
 // Admin Auth Routes
 $router->add('/login', 'AuthController@login');
