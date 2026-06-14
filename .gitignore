@@ -1,0 +1,37 @@
+# ==========================================
+# MD Design - .gitignore
+# ==========================================
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE / Editor ---
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+
+# --- PHP / Composer ---
+vendor/
+composer.lock
+
+# --- Environment & secrets ---
+.env
+.env.local
+config/local.php
+
+# --- XAMPP / Server logs ---
+*.log
+error_log
+
+# --- Temporary files ---
+*.tmp
+*.cache
+*.swp
+*.bak
+
+# --- Keep uploads folder structure but allow images to be tracked ---
+# (No uploads exclusion — images are intentionally tracked in this project)
