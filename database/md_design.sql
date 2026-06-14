@@ -1,4 +1,4 @@
--- MD Design Database Creation Script
+  -- MD Design Database Creation Script
 -- Target: MySQL / MariaDB
 
 CREATE DATABASE IF NOT EXISTS `md_design` 
