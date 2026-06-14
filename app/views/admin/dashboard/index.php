@@ -18,7 +18,7 @@
                 </div>
                 <div>
                     <h2 style="font-size: 20px; font-weight: 600; color: var(--white); margin: 0 0 6px 0;">Bonjour, <?= e($_SESSION['admin_username'] ?? 'Admin') ?> !</h2>
-                    <p style="color: var(--text-muted); margin: 0; font-size: 14px;">Vous pilotez actuellement l'activité de l'agence <strong>MD Design Tanger</strong>. Utilisez le panneau latéral pour gérer les contenus du site.</p>
+                    <p style="D: var(--text-muted); margin: 0; font-size: 14px;">Vous pilotez actuellement l'activité de l'agence <strong>MD Design Tanger</strong>. Utilisez le panneau latéral pour gérer les contenus du site.</p>
                 </div>
             </div>
         </div>
